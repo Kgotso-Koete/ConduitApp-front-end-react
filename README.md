@@ -1,68 +1,82 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# About the project
 
-## Available Scripts
+This is the code I wrote following the [Thinkster IO](https://thinkster.io/) tutorial on building a Medium clone (blogging social network) using the MERN stack (Mongodb Express React and Node) and is based on the ([Thinkster IO Real World App](https://github.com/gothinkster/realworld), from the [Thinkster Full Stack tutorial series](https://thinkster.io/tutorials/fullstack) by [Thinkster IO](https://thinkster.io/)
 
-In the project directory, you can run:
+This code is for the front end. [here is the tutorial](https://thinkster.io/tutorials/build-a-real-world-react-redux-application). The back end code I wrote can be found [here](https://github.com/Kgotso-Koete/ConduitApp-back-end).
 
-### `yarn start`
+# Description and features
 
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+## General functionality:
 
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
+- Authenticate users via JWT (login/signup pages + logout button on settings page)
+- CRU\* users (sign up & settings page - no deleting required)
+- CRUD Articles
+- CR\*D Comments on articles (no updating required)
+- GET and display paginated lists of articles
+- Favorite articles
+- Follow other users
 
-### `yarn test`
+## The general page breakdown is as follows:
 
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+- Home page (URL: /#/ )
+  - List of tags
+  - List of articles pulled from either Feed, Global, or by Tag
+  - Pagination for list of articles
+- Sign in/Sign up pages (URL: /#/login, /#/register )
+  - Use JWT (store the token in localStorage)
+- Settings page (URL: /#/settings )
+- Editor page to create/edit articles (URL: /#/editor, /#/editor/article-slug-here )
+- Article page (URL: /#/article/article-slug-here )
+  - Delete article button (only shown to article's author)
+  - Render markdown from server client side
+  - Comments section at bottom of page
+  - Delete comment button (only shown to comment's author)
+- Profile page (URL: /#/@username, /#/@username/favorites )
+  - Show basic user info
+  - List of articles populated from author's created articles or author's favorited articles
 
-### `yarn build`
+The API specification is listed in the /api folder of this repository
 
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
+# How to run the code:
 
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
+The app is deployed on [??]. Here is the [demo](), and here is the production api link `{{api link}}` that can be used with any front end
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## 1: Download Postman API environment
 
-### `yarn eject`
+Load the `Conduit.postman.{{environment}}.json` files in the `/api_spec` folder into Postman
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+## 2: Install packages
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+Run `npm install`
 
-Instead, it will copy all the configuration files and the transitive dependencies (Webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+## 3: Run project
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+Run `npm start`
 
-## Learn More
+## 4: Open it
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+Open [Postman](https://www.getpostman.com/) and begin making requests to `http://localhost:3000/api/{{request}}`
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+# Application Structure
 
-### Code Splitting
+??
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
+# Authentication
 
-### Analyzing the Bundle Size
+??
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
+# Acknowledgements
 
-### Making a Progressive Web App
+Special thanks to [Thinkster IO](https://thinkster.io/) for a great tutorial. The Real World mother of all demo apps is very ambitious and is exactly what the world needs.
+<br/>
+<br/>
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
+# License
 
-### Advanced Configuration
+The codebase is MIT licensed unless otherwise specified.
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
+#
 
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `yarn build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+To be modified further by Kgotso Koete
+<br/>
+Johannesburg, November 2019
