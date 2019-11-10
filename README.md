@@ -35,19 +35,17 @@ This code is for the front end. [here is the tutorial](https://thinkster.io/tuto
   - Show basic user info
   - List of articles populated from author's created articles or author's favorited articles
 
-The API specification is listed in the /api folder of this repository
-
 # How to run the code:
 
-The app is deployed on [??]. Here is the [demo](), and here is the production api link `{{api link}}` that can be used with any front end
+The app is deployed on [??](). Here is the [demo]().
 
-## 1: Download Postman API environment
+## 1: Live API server
 
-Load the `Conduit.postman.{{environment}}.json` files in the `/api_spec` folder into Postman
+The live API server is running at [api site]() for any front end to make requests against and view. You can view the API spec [here]() which contains all routes & responses for the server.
 
 ## 2: Install packages
 
-Run `npm install`
+After cloning this repository, run `npm install`
 
 ## 3: Run project
 
@@ -55,7 +53,7 @@ Run `npm start`
 
 ## 4: Open it
 
-Open [Postman](https://www.getpostman.com/) and begin making requests to `http://localhost:3000/api/{{request}}`
+Open up your browser at `http://localhost:3000`
 
 # Application Structure
 

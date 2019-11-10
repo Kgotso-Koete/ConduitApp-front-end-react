@@ -5,13 +5,12 @@ import React from "react";
 import { createStore } from "redux";
 
 const defaultState = {
-  appName: "CONDUIT",
+  appName: "conduit",
   articles: null
 };
 const reducer = function(state = defaultState, action) {
   return state;
 };
-
 const store = createStore(reducer);
 
 ReactDOM.render(

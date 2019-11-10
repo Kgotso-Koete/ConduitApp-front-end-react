@@ -3,6 +3,8 @@ import MainView from "./MainView";
 import React from "react";
 import { connect } from "react-redux";
 
+// const Promise = global.Promise;
+
 const mapStateToProps = state => ({
   appName: state.appName
 });
