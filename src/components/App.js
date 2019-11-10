@@ -12,11 +12,15 @@ class App extends React.Component {
     return (
       <div>
         <Header appName={this.props.appName} />
-        <Home />
+        {this.props.children}
       </div>
     );
   }
 }
+
+App.contextTypes = {
+  router: React.PropTypes.object.isRequired
+};
 
 export default connect(
   mapStateToProps,
