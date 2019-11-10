@@ -1,5 +1,4 @@
 import Header from "./Header";
-import Home from "./Home";
 import React from "react";
 import { connect } from "react-redux";
 
