@@ -1,11 +1,11 @@
-import App from "./App";
+import App from "./components/App";
 import { Provider } from "react-redux";
 import ReactDOM from "react-dom";
 import React from "react";
 import { createStore } from "redux";
 
 const defaultState = {
-  appName: "conduit",
+  appName: "CONDUIT",
   articles: null
 };
 const reducer = function(state = defaultState, action) {
