@@ -42,13 +42,9 @@ const Articles = {
   byAuthor: (author, page) =>
     requests.get(`/articles?author=${encodeURIComponent(author)}&limit=5`),
   del: slug => requests.del(`/articles/${slug}`),
+  favoritedBy: (author, page) =>
+    requests.get(`/articles?favorited=${encodeURIComponent(author)}&limit=5`),
   get: slug => requests.get(`/articles/${slug}`)
-};
-
-const Profile = {
-  follow: username => requests.post(`/profiles/${username}/follow`),
-  get: username => requests.get(`/profiles/${username}`),
-  unfollow: username => requests.del(`/profiles/${username}/follow`)
 };
 
 const Auth = {
@@ -66,6 +62,12 @@ const Comments = {
   delete: (slug, commentId) =>
     requests.del(`/articles/${slug}/comments/${commentId}`),
   forArticle: slug => requests.get(`/articles/${slug}/comments`)
+};
+
+const Profile = {
+  follow: username => requests.post(`/profiles/${username}/follow`),
+  get: username => requests.get(`/profiles/${username}`),
+  unfollow: username => requests.del(`/profiles/${username}/follow`)
 };
 
 export default {
