@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router";
 
 const ArticlePreview = props => {
   const article = props.article;
@@ -6,12 +7,14 @@ const ArticlePreview = props => {
   return (
     <div className="article-preview">
       <div className="article-meta">
-        <a>
-          <img src={article.author.image} role="presentation" />
-        </a>
+        <Link to={`@${article.author.username}`}>
+          <img src={article.author.image} />
+        </Link>
 
         <div className="info">
-          <a className="author">{article.author.username}</a>
+          <Link className="author" to={`@${article.author.username}`}>
+            {article.author.username}
+          </Link>
           <span className="date">
             {new Date(article.createdAt).toDateString()}
           </span>
@@ -24,7 +27,7 @@ const ArticlePreview = props => {
         </div>
       </div>
 
-      <a to={`article/${article.slug}`} className="preview-link">
+      <Link to={`article/${article.slug}`} className="preview-link">
         <h1>{article.title}</h1>
         <p>{article.description}</p>
         <span>Read more...</span>
@@ -37,7 +40,7 @@ const ArticlePreview = props => {
             );
           })}
         </ul>
-      </a>
+      </Link>
     </div>
   );
 };
