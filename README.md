@@ -55,13 +55,17 @@ Run `npm start`
 
 Open up your browser at `http://localhost:3000`
 
-# Application Structure
+# Timesheet log
 
-??
+- Back end
 
-# Authentication
+  - Version 1 (Thinkster Tutorial): 22 hours
+  - Version 2 (personal modifications): ?
 
-??
+- Front end
+
+  - Version 1 (Thinkster Tutorial): 37 hours
+  - Version 2 (personal modifications): ?
 
 # Acknowledgements
 
