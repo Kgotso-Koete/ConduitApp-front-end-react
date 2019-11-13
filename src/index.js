@@ -14,21 +14,38 @@ import Register from "./components/Register";
 import Settings from "./components/Settings";
 import store from "./store";
 
+// Material-UI
+import { MuiThemeProvider, createMuiTheme } from "@material-ui/core/styles";
+
+// create theme
+const theme = createMuiTheme({
+  palette: {
+    primary: {
+      main: "#c8e6c9"
+    },
+    secondary: {
+      main: "#1b5e20"
+    }
+  }
+});
+
 ReactDOM.render(
-  <Provider store={store}>
-    <Router history={hashHistory}>
-      <Route path="/" component={App}>
-        <IndexRoute component={Home} />
-        <Route path="login" component={Login} />
-        <Route path="register" component={Register} />
-        <Route path="settings" component={Settings} />
-        <Route path="article/:id" component={Article} />
-        <Route path="@:username" component={Profile} />
-        <Route path="@:username/favorites" component={ProfileFavorites} />
-        <Route path="editor" component={Editor} />
-        <Route path="editor/:slug" component={Editor} />
-      </Route>
-    </Router>
-  </Provider>,
+  <MuiThemeProvider theme={theme}>
+    <Provider store={store}>
+      <Router history={hashHistory}>
+        <Route path="/" component={App}>
+          <IndexRoute component={Home} />
+          <Route path="login" component={Login} />
+          <Route path="register" component={Register} />
+          <Route path="settings" component={Settings} />
+          <Route path="article/:id" component={Article} />
+          <Route path="@:username" component={Profile} />
+          <Route path="@:username/favorites" component={ProfileFavorites} />
+          <Route path="editor" component={Editor} />
+          <Route path="editor/:slug" component={Editor} />
+        </Route>
+      </Router>
+    </Provider>
+  </MuiThemeProvider>,
   document.getElementById("root")
 );

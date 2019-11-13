@@ -1,3 +1,4 @@
+import PropTypes from "prop-types";
 import Header from "./Header";
 import Home from "./Home";
 import React from "react";
@@ -57,10 +58,7 @@ class App extends React.Component {
 }
 
 App.contextTypes = {
-  router: React.PropTypes.object.isRequired
+  router: PropTypes.object.isRequired
 };
 
-export default connect(
-  mapStateToProps,
-  mapDispatchToProps
-)(App);
+export default connect(mapStateToProps, mapDispatchToProps)(App);
