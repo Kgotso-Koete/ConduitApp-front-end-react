@@ -57,7 +57,7 @@ const ArticlePreview = props => {
 
   return (
     <Card className={[classes.card, "elevate-shadow"]}>
-      <Link className="author" to={`@${article.author.username}`}>
+      <Link className="preview-link" to={`@${article.author.username}`}>
         <Card position="static" className={classes.BlogPreviewHeader}>
           <CardHeader
             avatar={
