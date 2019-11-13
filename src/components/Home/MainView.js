@@ -3,6 +3,16 @@ import React from "react";
 import agent from "../../agent";
 import { connect } from "react-redux";
 
+// Material-UI
+import Tabs from "@material-ui/core/Tabs";
+import Tab from "@material-ui/core/Tab";
+import { makeStyles } from "@material-ui/core/styles";
+import Paper from "@material-ui/core/Paper";
+import PublicIcon from "@material-ui/icons/Public";
+import Typography from "@material-ui/core/Typography";
+import DynamicFeedIcon from "@material-ui/icons/DynamicFeed";
+import LocalOfferIcon from "@material-ui/icons/LocalOffer";
+
 const YourFeedTab = props => {
   if (props.token) {
     const clickHandler = ev => {
@@ -11,15 +21,32 @@ const YourFeedTab = props => {
     };
 
     return (
-      <li className="nav-item">
-        <a
-          href=""
-          className={props.tab === "feed" ? "nav-link active" : "nav-link"}
-          onClick={clickHandler}
-        >
-          Your Feed
-        </a>
-      </li>
+      <Paper>
+        <li className="nav-item">
+          <a
+            href=""
+            className={props.tab === "feed" ? "nav-link active" : "nav-link"}
+            onClick={clickHandler}
+          >
+            <div
+              style={{
+                display: "flex",
+                alignItems: "center"
+              }}
+            >
+              <Typography variant="h5" color="textSecondary" component="p">
+                Your Feed
+              </Typography>
+              <DynamicFeedIcon
+                color="secondary"
+                style={{
+                  margin: 10
+                }}
+              />
+            </div>
+          </a>
+        </li>
+      </Paper>
     );
   }
   return null;
@@ -31,15 +58,32 @@ const GlobalFeedTab = props => {
     props.onTabClick("all", agent.Articles.all());
   };
   return (
-    <li className="nav-item">
-      <a
-        href=""
-        className={props.tab === "all" ? "nav-link active" : "nav-link"}
-        onClick={clickHandler}
-      >
-        Global Feed
-      </a>
-    </li>
+    <Paper>
+      <li className="nav-item">
+        <a
+          href=""
+          className={props.tab === "all" ? "nav-link active" : "nav-link"}
+          onClick={clickHandler}
+        >
+          <div
+            style={{
+              display: "flex",
+              alignItems: "center"
+            }}
+          >
+            <Typography variant="h5" color="textSecondary" component="p">
+              Global Feed
+            </Typography>
+            <PublicIcon
+              color="secondary"
+              style={{
+                margin: 10
+              }}
+            />
+          </div>
+        </a>
+      </li>
+    </Paper>
   );
 };
 
@@ -49,11 +93,29 @@ const TagFilterTab = props => {
   }
 
   return (
-    <li className="nav-item">
-      <a href="" className="nav-link active">
-        <i className="ion-pound"></i> {props.tag}
-      </a>
-    </li>
+    <Paper>
+      <li className="nav-item">
+        <a href="" className="nav-link active">
+          <div
+            style={{
+              display: "flex",
+              alignItems: "center",
+              paddingLeft: 60
+            }}
+          >
+            <Typography variant="h5" color="textSecondary" component="p">
+              {props.tag}
+            </Typography>
+            <LocalOfferIcon
+              color="secondary"
+              style={{
+                margin: 10
+              }}
+            />
+          </div>
+        </a>
+      </li>
+    </Paper>
   );
 };
 
