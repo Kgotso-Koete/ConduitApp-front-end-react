@@ -14,6 +14,9 @@ import Register from "./components/Register";
 import Settings from "./components/Settings";
 import store from "./store";
 
+// custom CSS
+import "./App.css";
+
 // Material-UI
 import { MuiThemeProvider, createMuiTheme } from "@material-ui/core/styles";
 
