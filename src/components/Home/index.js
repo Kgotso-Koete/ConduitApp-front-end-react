@@ -41,6 +41,7 @@ class Home extends React.Component {
         <Banner appName={this.props.appName} />
 
         <div className="container page">
+          <Tags tags={this.props.tags} onClickTag={this.props.onClickTag} />
           <MainView />
         </div>
       </div>
