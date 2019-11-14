@@ -4,6 +4,8 @@ This is the code I wrote following the [Thinkster IO](https://thinkster.io/) tut
 
 This code is for the front end. [here is the tutorial](https://thinkster.io/tutorials/build-a-real-world-react-redux-application). The back end code I wrote can be found [here](https://github.com/Kgotso-Koete/ConduitApp-back-end).
 
+# Click here for the [demo](https://conduit-by-kg.firebaseapp.com)
+
 # Description and features
 
 ## General functionality:
@@ -37,7 +39,7 @@ This code is for the front end. [here is the tutorial](https://thinkster.io/tuto
 
 # How to run the code:
 
-The app is deployed on [??](). Here is the [demo]().
+The app is deployed on Firebase. Here is the [demo](https://conduit-by-kg.firebaseapp.com). Web address is: `https://conduit-by-kg.firebaseapp.com`
 
 ## 1: Live API server
 
@@ -60,12 +62,12 @@ Open up your browser at `http://localhost:3000`
 - Back end
 
   - Version 1 (Thinkster Tutorial): 22 hours
-  - Version 2 (personal modifications): ?
+  - Version 2 (personal modifications): 7 hours (to add commentCount and Trending article list)
 
 - Front end
 
   - Version 1 (Thinkster Tutorial): 37 hours
-  - Version 2 (personal modifications): ?
+  - Version 2 (personal modifications): 17 hours
 
 # Acknowledgements
 
