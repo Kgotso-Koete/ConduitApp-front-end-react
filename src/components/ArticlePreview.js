@@ -1,5 +1,7 @@
 import React from "react";
 import { Link } from "react-router";
+import agent from "../agent";
+import { connect } from "react-redux";
 
 // Material-UI
 import { makeStyles } from "@material-ui/core/styles";
@@ -50,10 +52,38 @@ const useStyles = makeStyles(theme => ({
   }
 }));
 
+const FAVORITED_CLASS = "btn btn-sm btn-primary";
+const NOT_FAVORITED_CLASS = "btn btn-sm btn-outline-primary";
+
+const mapDispatchToProps = dispatch => ({
+  favorite: slug =>
+    dispatch({
+      type: "ARTICLE_FAVORITED",
+      payload: agent.Articles.favorite(slug)
+    }),
+  unfavorite: slug =>
+    dispatch({
+      type: "ARTICLE_UNFAVORITED",
+      payload: agent.Articles.unfavorite(slug)
+    })
+});
+
 const ArticlePreview = props => {
   const article = props.article;
-
   const classes = useStyles();
+
+  const favoriteButtonClass = article.favorited
+    ? FAVORITED_CLASS
+    : NOT_FAVORITED_CLASS;
+
+  const handleClick = ev => {
+    ev.preventDefault();
+    if (article.favorited) {
+      props.unfavorite(article.slug);
+    } else {
+      props.favorite(article.slug);
+    }
+  };
 
   return (
     <Card className={[classes.card, "elevate-shadow"]}>
@@ -97,7 +127,9 @@ const ArticlePreview = props => {
             badgeContent={[article.favoritesCount]}
             color="primary"
           >
-            <FavoriteIcon className={classes.ArticleIcons} />
+            <button className={favoriteButtonClass} onClick={handleClick}>
+              <i className="ion-heart"></i>
+            </button>
           </Badge>
 
           {/* Comments button */}
@@ -132,4 +164,4 @@ const ArticlePreview = props => {
   );
 };
 
-export default ArticlePreview;
+export default connect(() => ({}), mapDispatchToProps)(ArticlePreview);
