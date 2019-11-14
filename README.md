@@ -41,7 +41,7 @@ The app is deployed on [??](). Here is the [demo]().
 
 ## 1: Live API server
 
-The live API server is running at [api site]() for any front end to make requests against and view. You can view the API spec [here]() which contains all routes & responses for the server.
+The live API server is running at [https://intense-hollows-36762.herokuapp.com/api](https://intense-hollows-36762.herokuapp.com/api) for any front end to make requests against and view. You can view the API spec [here](https://github.com/Kgotso-Koete/ConduitApp-back-end/tree/master/api_spec) which contains all routes & responses for the server.
 
 ## 2: Install packages
 

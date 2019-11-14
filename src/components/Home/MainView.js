@@ -12,6 +12,7 @@ import PublicIcon from "@material-ui/icons/Public";
 import Typography from "@material-ui/core/Typography";
 import DynamicFeedIcon from "@material-ui/icons/DynamicFeed";
 import LocalOfferIcon from "@material-ui/icons/LocalOffer";
+import WhatshotIcon from "@material-ui/icons/Whatshot";
 
 const YourFeedTab = props => {
   if (props.token) {
@@ -119,6 +120,47 @@ const TagFilterTab = props => {
   );
 };
 
+const TrendingTab = props => {
+  if (props.token) {
+    const clickHandler = ev => {
+      ev.preventDefault();
+      props.onTabClick("trending", agent.Articles.trending());
+    };
+
+    return (
+      <Paper>
+        <li className="nav-item">
+          <a
+            href=""
+            className={
+              props.tab === "trending" ? "nav-link active" : "nav-link"
+            }
+            onClick={clickHandler}
+          >
+            <div
+              style={{
+                display: "flex",
+                alignItems: "center"
+              }}
+            >
+              <Typography variant="h5" color="textSecondary" component="p">
+                Trending
+              </Typography>
+              <WhatshotIcon
+                color="secondary"
+                style={{
+                  margin: 10
+                }}
+              />
+            </div>
+          </a>
+        </li>
+      </Paper>
+    );
+  }
+  return null;
+};
+
 const mapStateToProps = state => ({
   ...state.articleList,
   token: state.common.token
@@ -148,6 +190,12 @@ const MainView = props => {
             />
 
             <GlobalFeedTab tab={props.tab} onTabClick={props.onTabClick} />
+
+            <TrendingTab
+              token={props.token}
+              tab={props.tab}
+              onTabClick={props.onTabClick}
+            />
 
             <TagFilterTab tag={props.tag} />
           </ul>
