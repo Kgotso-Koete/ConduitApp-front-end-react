@@ -140,7 +140,7 @@ const MainView = props => {
     <div className="row">
       <div className="col-xs-12 col-md-10 offset-md-1">
         <div className="feed-toggle">
-          <ul className="nav nav-pills outline-active col-xs-12 col-md-10 offset-md-1">
+          <ul className="nav nav-pills outline-active">
             <YourFeedTab
               token={props.token}
               tab={props.tab}

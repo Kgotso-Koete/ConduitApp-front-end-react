@@ -13,15 +13,18 @@ const ArticleList = props => {
 
   return (
     <div>
-      {props.articles.map(article => {
-        return <ArticlePreview article={article} key={article.slug} />;
-      })}
-
-      <ListPagination
-        articlesCount={props.articlesCount}
-        currentPage={props.currentPage}
-        onSetPage={props.onSetPage}
-      />
+      <div>
+        {props.articles.map(article => {
+          return <ArticlePreview article={article} key={article.slug} />;
+        })}
+      </div>
+      <div>
+        <ListPagination
+          articlesCount={props.articlesCount}
+          currentPage={props.currentPage}
+          onSetPage={props.onSetPage}
+        />
+      </div>
     </div>
   );
 };
