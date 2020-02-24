@@ -6,6 +6,11 @@ This code is for the front end. [here is the tutorial](https://thinkster.io/tuto
 
 # Click here for the [demo](https://conduit-by-kg.firebaseapp.com)
 
+# Screen shot of the application
+
+![](/screenshots/Conduit_screenshot_1.png)
+![](/screenshots/Conduit_screenshot_2.png)
+
 # Description and features
 
 ## General functionality:
